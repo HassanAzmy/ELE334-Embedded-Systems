@@ -1,0 +1,60 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             myCode, CODE
+    2 00000000                 EXPORT           __main
+    3 00000000         __main
+    4 00000000 F04F 0005       MOV              R0, #5
+    5 00000004         loop
+    6 00000004 1E40            SUBS             R0, R0, #1
+    7 00000006 D000            BEQ              exit
+    8 00000008 E7FC            B                loop
+    9 0000000A         exit
+   10 0000000A                 END
+Command Line: --debug --xref --cpu=Cortex-M4 --apcs=interwork --depend=.\branch
+.d -o.\branch.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\AR
+M\Inc\Luminary --predefine="__RTX SETA 1" --predefine="__EVAL SETA 1" --predefi
+ne="__MICROLIB SETA 1" --list=.\branch.lst Branch.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 3 in file Branch.s
+   Uses
+      At line 2 in file Branch.s
+Comment: __main used once
+exit 0000000A
+
+Symbol: exit
+   Definitions
+      At line 9 in file Branch.s
+   Uses
+      At line 7 in file Branch.s
+Comment: exit used once
+loop 00000004
+
+Symbol: loop
+   Definitions
+      At line 5 in file Branch.s
+   Uses
+      At line 8 in file Branch.s
+Comment: loop used once
+myCode 00000000
+
+Symbol: myCode
+   Definitions
+      At line 1 in file Branch.s
+   Uses
+      None
+Comment: myCode unused
+4 symbols
+337 symbols in table
